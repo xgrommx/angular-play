@@ -2,11 +2,13 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-# Home page
-GET     /                           controllers.Assets.at(path="/public", file="index.html")
+# Index page - Loads Angular
+GET		/							controllers.Application.index
+
+# Map Angular and other Static resources from the /public folder to the '/' URL path
+GET		/*file						controllers.Assets.at(path="/public", file)
 
 # Enable webjar based resources to be returned
-GET     /webjars/*file              controllers.WebJarAssets.at(file)
+GET		/webjars/*file				controllers.WebJarAssets.at(file)
 
-# Map static resources from the /public folder to the /assets URL path
-GET     /*file                      controllers.Assets.at(path="/public", file)
+
