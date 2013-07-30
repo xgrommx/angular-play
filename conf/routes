@@ -8,7 +8,7 @@ GET		/							controllers.Application.index
 # Enable webjar based resources to be returned
 GET		/webjars/*file				controllers.WebJarAssets.at(file)
 
-# Map Angular and other Static resources from the /public folder to the '/' URL path
-GET		/*file						controllers.Assets.at(path="/public", file)
+# Map Angular and other Static resources from the /public folder to the '/assets' URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 
